@@ -10,6 +10,16 @@
 #include <dt-bindings/zmk/pointing.h>
 #include "keys_da.h"
 
+&lt {
+    tapping-term-ms = <150>;
+    flavor = "tap-preferred";
+};
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+};
+
 / {
     chosen { zmk,physical-layout = &five_col_layout; };
 };
@@ -18,21 +28,21 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_ae {
-            bindings = <&kp DK_AE>;
+        combo_eo {
+            bindings = <&kp DA_O_SLASH>;
             key-positions = <10 2>;
             layers = <0>;
         };
 
         combo_ao {
-            bindings = <&kp A>;
-            key-positions = <10 8>;
+            bindings = <&kp DA_A_RING>;
+            key-positions = <10 12>;
             layers = <0>;
         };
 
-        combo_eo {
-            bindings = <&kp O>;
-            key-positions = <2 8>;
+        combo_ae {
+            bindings = <&kp DA_AE>;
+            key-positions = <2 12>;
             layers = <0>;
         };
     };
@@ -45,7 +55,7 @@
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
         };
 
         esc_l: esc_l {
@@ -63,10 +73,10 @@
 
         DK {
             bindings = <
-  &kp Q            &kp W           &kp E             &kp R          &lt 5 T     &none       &none       &lt 5 Y  &kp U        &kp I              &kp O           &kp P
-  &mt LEFT_META A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F    &lt 1 G      &none       &none      &lt 1 H  &mt RCTRL J  &mt RIGHT_SHIFT K  &mt LEFT_ALT L  &mt RIGHT_META SQT
-  &lt 8 Z          &kp X           &kp C             &kp V          &kp B         &kp N    &kp M        &kp COMMA          &kp DOT         &lt 8 QMARK
-                                   &osl 6 6          &mt TAB SPACE  &kp BSPC      &kp ESC  &kp RET      &osl 6 6
+  &kp Q            &kp W           &kp E             &kp R          &lt 5 T   &none  &none  &lt 5 Y  &kp U        &kp I              &kp O           &kp P
+  &mt LEFT_META A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F    &lt 1 G   &none  &none  &lt 1 H  &mt RCTRL J  &mt RIGHT_SHIFT K  &mt LEFT_ALT L  &mt RIGHT_META DA_SQT
+  &lt 8 Z          &kp X           &kp C             &kp V          &kp B                   &kp N    &kp M        &kp DA_COMMA       &kp DA_PERIOD   &lt 8 DA_QUESTION
+                                   &osl 6 6          &mt TAB SPACE  &kp BSPC                &kp ESC  &kp RET      &osl 6 6
             >;
 
             label = "Dansk";
@@ -74,10 +84,10 @@
 
         DK_Sym {
             bindings = <
-  &kp LS(EXCL)         &kp LS(DQT)        &kp LS(POUND)        &kp DLLR        &lt 5 PRCNT      &none       &none      &lt 5 AMPS     &kp PIPE         &kp LS(LPAR)     &kp LS(RPAR)       &kp LS(EQUAL)
-  &mt LEFT_META GRAVE  &mt LEFT_ALT LBKT  &mt LEFT_SHIFT RBKT  &mt LCTRL BSLH  &kp LS(FSLH)     &none       &none      &kp LS(UNDER)  &mt RCTRL MINUS  &mt RSHIFT LBRC  &mt LEFT_ALT RBRC  &mt RIGHT_META STAR
-  &lt 8 LT             &kp LS(GT)         &kp AT               &none           &none             &kp TILDE      &kp PLUS         &kp LS(SEMI)     &kp LS(COLON)      &lt 8 CARET
-                                          &osl 6 6             &mt TAB SPACE   &kp BSPC          &esc_l         &to 1            &osl 6 6
+  &kp DA_EXCLAMATION      &kp DA_DOUBLE_QUOTES          &kp DA_HASH                      &kp DA_DOLLAR           &lt 5 DA_PERCENT  &none  &none  &lt 5 DA_AMPERSAND  &kp DA_PIPE         &kp DA_LEFT_PARENTHESIS   &kp DA_RIGHT_PARENTHESIS     &kp DA_EQUAL
+  &mt LEFT_META DA_GRAVE  &mt LEFT_ALT DA_LEFT_BRACKET  &mt LEFT_SHIFT DA_RIGHT_BRACKET  &mt LCTRL DA_BACKSLASH  &kp DA_SLASH      &none  &none  &kp DA_UNDERSCORE   &mt RCTRL DA_MINUS  &mt RSHIFT DA_LEFT_BRACE  &mt LEFT_ALT DA_RIGHT_BRACE  &mt RIGHT_META DA_ASTERISK
+  &lt 8 DA_LESS_THAN      &kp DA_GREATER_THAN           &kp DA_AT_SIGN                   &kp DA_ACUTE            &kp DA_UMLAUT                   &kp DA_TILDE        &kp DA_PLUS         &kp DA_SEMICOLON          &kp DA_COLON                 &lt 8 DA_CARET
+                                                        &osl 6 6                         &mt TAB SPACE           &kp BSPC                        &esc_l              &to 1               &osl 6 6
             >;
 
             label = "Danske Symboler";
@@ -85,10 +95,10 @@
 
         US {
             bindings = <
-  &kp Q       &kp W           &kp E         &kp R          &lt 5 T     &none       &none       &lt 5 Y  &kp U        &kp I         &kp O           &kp P
-  &mt LGUI A  &mt LEFT_ALT S  &mt LSHIFT D  &mt LCTRL F    &lt 3 G     &none       &none       &lt 3 H  &mt RCTRL J  &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_META SQT
-  &lt 8 Z     &kp X           &kp C         &kp V          &kp B         &kp N    &kp M        &kp COMMA     &kp DOT         &lt 8 QUESTION
-                              &osl 6 6      &mt TAB SPACE  &kp BSPC      &esc_l   &kp RET      &osl 6 6
+  &kp Q       &kp W           &kp E         &kp R          &lt 5 T   &none  &none  &lt 5 Y  &kp U        &kp I         &kp O           &kp P
+  &mt LGUI A  &mt LEFT_ALT S  &mt LSHIFT D  &mt LCTRL F    &lt 3 G   &none  &none  &lt 3 H  &mt RCTRL J  &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_META SQT
+  &lt 8 Z     &kp X           &kp C         &kp V          &kp B                   &kp N    &kp M        &kp COMMA     &kp DOT         &lt 8 QUESTION
+                              &osl 6 6      &mt TAB SPACE  &kp BSPC                &esc_l   &kp RET      &osl 6 6
             >;
 
             label = "US";
@@ -96,10 +106,10 @@
 
         US_Sym {
             bindings = <
-  &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp POUND        &kp DLLR        &lt 5 PERCENT     &none       &none      &lt 5 AMPERSAND  &kp PIPE         &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS     &kp EQUAL
-  &mt LMETA GRAVE  &mt LEFT_ALT LBKT  &mt LSHIFT RBKT  &mt LCTRL BSLH  &kp SLASH      &none       &none         &kp UNDERSCORE   &mt RCTRL MINUS  &mt RSHIFT LEFT_BRACE  &mt LEFT_ALT RIGHT_BRACE  &mt RMETA ASTERISK
-  &lt 8 LESS_THAN  &kp GREATER_THAN   &kp AT           &none           &none              &kp TILDE        &kp PLUS         &kp SEMICOLON          &kp COLON                 &lt 8 CARET
-                                      &osl 6 6         &mt TAB SPACE   &kp BACKSPACE      &to 2            &to 3            &osl 6 6
+  &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp POUND        &kp DLLR        &lt 5 PERCENT  &none  &none  &lt 5 AMPERSAND  &kp PIPE         &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS     &kp EQUAL
+  &mt LMETA GRAVE  &mt LEFT_ALT LBKT  &mt LSHIFT RBKT  &mt LCTRL BSLH  &kp SLASH      &none  &none  &kp UNDERSCORE   &mt RCTRL MINUS  &mt RSHIFT LEFT_BRACE  &mt LEFT_ALT RIGHT_BRACE  &mt RMETA ASTERISK
+  &lt 8 LESS_THAN  &kp GREATER_THAN   &kp AT           &none           &none                        &kp TILDE        &kp PLUS         &kp SEMICOLON          &kp COLON                 &lt 8 CARET
+                                      &osl 6 6         &mt TAB SPACE   &kp BACKSPACE                &to 2            &to 3            &osl 6 6
             >;
 
             label = "US Symbols";
@@ -107,10 +117,10 @@
 
         Gaming {
             bindings = <
-  &kp Q  &kp W  &kp E     &kp R      &kp T     &none       &none         &kp Y   &kp U    &kp I      &kp O    &kp P
-  &kp A  &kp S  &kp D     &kp F      &kp G     &none       &none         &kp H   &kp J    &kp K      &kp L    &kp SQT
-  &kp Z  &kp X  &kp C     &kp V      &kp B         &kp N   &kp M    &kp COMMA  &kp DOT  &lt 8 QUESTION
-                &osl 6 6  &kp SPACE  &kp BSPC      &esc_l  &kp RET  &osl 6 6
+  &kp Q  &kp W  &kp E     &kp R      &kp T     &none  &none  &kp Y   &kp U    &kp I         &kp O          &kp P
+  &kp A  &kp S  &kp D     &kp F      &kp G     &none  &none  &kp H   &kp J    &kp K         &kp L          &kp DA_SQT
+  &kp Z  &kp X  &kp C     &kp V      &kp B                   &kp N   &kp M    &kp DA_COMMA  &kp DA_PERIOD  &lt 8 DA_QUESTION
+                &osl 6 6  &kp SPACE  &kp BSPC                &esc_l  &kp RET  &osl 6 6
             >;
 
             label = "gaming";
@@ -118,10 +128,10 @@
 
         Sys {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans     &none       &none      &kp C_STOP      &kp C_PLAY_PAUSE   &trans           &trans      &trans
-  &trans  &trans  &trans  &trans  &trans     &none       &none      &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &trans
-  &trans  &trans  &trans  &trans  &trans      &trans          &kp K_MUTE         &trans           &trans      &trans
-                  &trans  &trans  &trans      &esc_l          &to 5              &osl 6 6
+  &trans  &trans  &trans  &trans  &trans  &none  &none  &kp C_STOP      &kp C_PLAY_PAUSE   &trans           &trans      &trans
+  &trans  &trans  &trans  &trans  &trans  &none  &none  &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  &trans
+  &trans  &trans  &trans  &trans  &trans                &trans          &kp K_MUTE         &trans           &trans      &trans
+                  &trans  &trans  &trans                &esc_l          &to 5              &osl 6 6
             >;
 
             label = "System";
@@ -129,10 +139,10 @@
 
         Num {
             bindings = <
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5     &none       &none       &kp N6   &kp N7  &kp N8  &kp N9  &kp N0
-  &trans  &trans  &trans  &trans  &kp F11     &none       &none      &kp F12  &trans  &trans  &trans  &trans
-  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5       &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
-                  &trans  &trans  &trans       &esc_l   &to 6   &trans
+  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &none  &none  &kp N6   &kp N7  &kp N8  &kp N9  &kp N0
+  &trans  &trans  &trans  &trans  &kp F11  &none  &none  &kp F12  &trans  &trans  &trans  &trans
+  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
+                  &trans  &trans  &trans                 &esc_l   &to 6   &trans
             >;
 
             label = "Numbers";
@@ -140,10 +150,10 @@
 
         BT {
             bindings = <
-  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none       &none       &trans      &trans  &trans  &trans      &trans
-  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4     &none       &none      &bt BT_PRV  &trans  &trans  &bt BT_NXT  &trans
-  &trans         &trans         &trans         &trans         &bt BT_CLR         &trans      &trans  &trans  &trans      &trans
-                                &trans         &trans         &trans             &esc_l      &to 7   &trans
+  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none  &none  &trans      &trans  &trans  &trans      &trans
+  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none  &none  &bt BT_PRV  &trans  &trans  &bt BT_NXT  &trans
+  &trans         &trans         &trans         &trans         &bt BT_CLR                   &trans      &trans  &trans  &trans      &trans
+                                &trans         &trans         &trans                       &esc_l      &to 7   &trans
             >;
 
             label = "Bluetooth";
@@ -151,10 +161,10 @@
 
         Nav {
             bindings = <
-  &trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &trans     &none       &none         &trans          &trans          &trans        &trans           &kp DELETE
-  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &none       &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-  &trans  &trans          &trans          &trans           &mkp MCLK      &to 2           &to 4           &to 7         &trans           &trans
-                          &osl 6 6        &mkp LCLK        &mkp RCLK      &esc_l          &to 8           &osl 6 6
+  &trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &trans     &none  &none  &trans          &trans          &trans        &trans           &kp DELETE
+  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+  &trans  &trans          &trans          &trans           &mkp MCLK                &to 2           &to 4           &to 7         &trans           &trans
+                          &osl 6 6        &mkp LCLK        &mkp RCLK                &esc_l          &to 8           &osl 6 6
             >;
 
             label = "Navigation";
