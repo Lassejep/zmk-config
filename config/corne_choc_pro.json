@@ -10,8 +10,6 @@
                 { "row": 0, "col": 3,  "x": 2.0, "y": 0.0 },
                 { "row": 0, "col": 4,  "x": 3.0, "y": 0.12 },
                 { "row": 0, "col": 5,  "x": 4.0, "y": 0.24 },
-                { "row": 0, "col": 6,  "x": 5.0, "y": 0.74 },
-                { "row": 0, "col": 7,  "x": 7.0, "y": 0.74 },
                 { "row": 0, "col": 8,  "x": 8.0, "y": 0.24 },
                 { "row": 0, "col": 9,  "x": 9.0, "y": 0.12 },
                 { "row": 0, "col": 10, "x": 10.0, "y": 0.0 },
@@ -23,8 +21,6 @@
                 { "row": 1, "col": 3,  "x": 2.0, "y": 1.0 },
                 { "row": 1, "col": 4,  "x": 3.0, "y": 1.12 },
                 { "row": 1, "col": 5,  "x": 4.0, "y": 1.24 },
-                { "row": 1, "col": 6,  "x": 5.0, "y": 1.74 },
-                { "row": 1, "col": 7,  "x": 7.0, "y": 1.74 },
                 { "row": 1, "col": 8,  "x": 8.0, "y": 1.24 },
                 { "row": 1, "col": 9,  "x": 9.0, "y": 1.12 },
                 { "row": 1, "col": 10, "x": 10.0, "y": 1.0 },
@@ -52,34 +48,4 @@
             ]
         }
     },
-    "sensors": [
-        {
-            "ref": "left_encoder_ex1",
-            "name": "encoder_left_ex1",
-            "identifier": "encoder_left_ex1",
-            "compatible": "alps,ec11",
-            "label": "LEFT_ENCODER_EX1"
-        },
-        {
-            "ref": "left_encoder_ex2",
-            "name": "encoder_left_ex2",
-            "identifier": "encoder_left_ex2",
-            "compatible": "alps,ec11",
-            "label": "LEFT_ENCODER_EX2"
-        },
-        {
-            "ref": "right_encoder_ex1",
-            "name": "encoder_right_ex1",
-            "identifier": "encoder_right_ex1",
-            "compatible": "alps,ec11",
-            "label": "RIGHT_ENCODER_EX1"
-        },
-        {
-            "ref": "right_encoder_ex2",
-            "name": "encoder_right_ex2",
-            "identifier": "encoder_right_ex2",
-            "compatible": "alps,ec11",
-            "label": "RIGHT_ENCODER_EX2"
-        }
-    ]
 }

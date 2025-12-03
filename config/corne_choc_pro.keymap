@@ -21,19 +21,19 @@
         compatible = "zmk,combos";
 
         combo_ae {
-            bindings = <&kp DA_AE>;
+            bindings = <&kp E>;
             key-positions = <10 2>;
             layers = <0>;
         };
 
         combo_ao {
-            bindings = <&kp DA_A_RING>;
+            bindings = <&kp A>;
             key-positions = <10 8>;
             layers = <0>;
         };
 
         combo_eo {
-            bindings = <&kp DA_O_SLASH>;
+            bindings = <&kp O>;
             key-positions = <2 8>;
             layers = <0>;
         };
@@ -78,7 +78,7 @@
             bindings = <
   &kp LS(EXCL)         &kp LS(DQT)        &kp LS(POUND)        &kp DLLR        &lt 5 PRCNT        &lt 5 AMPS     &kp PIPE         &kp LS(LPAR)     &kp LS(RPAR)       &kp LS(EQUAL)
   &mt LEFT_META GRAVE  &mt LEFT_ALT LBKT  &mt LEFT_SHIFT RBKT  &mt LCTRL BSLH  &kp LS(FSLH)       &kp LS(UNDER)  &mt RCTRL MINUS  &mt RSHIFT LBRC  &mt LEFT_ALT RBRC  &mt RIGHT_META STAR
-  &lt 8 LT             &kp LS(GT)         &kp AT               &kp DA_ACUTE    &kp DA_UMLAUT      &kp TILDE      &kp PLUS         &kp LS(SEMI)     &kp LS(COLON)      &lt 8 CARET
+  &lt 8 LT             &kp LS(GT)         &kp AT               &none           &none              &kp TILDE      &kp PLUS         &kp LS(SEMI)     &kp LS(COLON)      &lt 8 CARET
                                           &osl 6 6             &mt TAB SPACE   &kp BSPC           &esc_l         &to 1            &osl 6 6
             >;
 
