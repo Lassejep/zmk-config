@@ -14,11 +14,13 @@
 &lt {
     tapping-term-ms = <175>;
     flavor = "tap-preferred";
+    quick-tap-ms = <150>;
 };
 
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <175>;
+    quick-tap-ms = <150>;
 };
 
 / {
@@ -67,6 +69,15 @@
 
             tapping-term-ms = <200>;
         };
+
+        double_tap_to_num: double_tap_to_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOUBLE_TAP_TO_NUM";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 6>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -77,7 +88,7 @@
   &kp Q            &kp W           &kp E             &kp R          &lt 5 T   &none  &none  &lt 5 Y  &kp U        &kp I              &kp O           &kp P
   &mt LEFT_META A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F    &lt 1 G   &none  &none  &lt 1 H  &mt RCTRL J  &mt RIGHT_SHIFT K  &mt LEFT_ALT L  &mt RIGHT_META DA_SQT
   &lt 8 Z          &kp X           &kp C             &kp V          &kp B                   &kp N    &kp M        &kp DA_COMMA       &kp DA_PERIOD   &lt 8 DA_QUESTION
-                                   &osl 6 6          &mt TAB SPACE  &kp BSPC                &kp ESC  &kp RET      &osl 6 6
+                                   &osl 6 6          &mt TAB SPACE  &kp BSPC                &esc_l   &kp RET      &osl 6 6
             >;
 
             label = "DA";
@@ -140,10 +151,10 @@
 
         Num {
             bindings = <
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &none  &none  &kp N6   &kp N7  &kp N8  &kp N9  &kp N0
-  &trans  &trans  &trans  &trans  &kp F11  &none  &none  &kp F12  &trans  &trans  &trans  &trans
-  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
-                  &trans  &trans  &trans                 &esc_l   &to 6   &trans
+  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &none  &none  &kp N6   &kp N7              &kp N8  &kp N9  &kp N0
+  &trans  &trans  &trans  &trans  &kp F11  &none  &none  &kp F12  &trans              &trans  &trans  &trans
+  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6   &kp F7              &kp F8  &kp F9  &kp F10
+                  &trans  &trans  &trans                 &esc_l   &double_tap_to_num  &trans
             >;
 
             label = "Num";
