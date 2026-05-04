@@ -72,11 +72,38 @@
             tapping-term-ms = <200>;
         };
 
-        dttn: dttn {
+        dtt6: dtt6 {
             compatible = "zmk,behavior-tap-dance";
-            label = "DTTN";
+            label = "DTT6";
             #binding-cells = <0>;
             bindings = <&none>, <&to 6>;
+
+            tapping-term-ms = <200>;
+        };
+
+        dtt2: dtt2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTT2";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 2>;
+
+            tapping-term-ms = <200>;
+        };
+
+        dtt4: dtt4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTT4";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 4>;
+
+            tapping-term-ms = <200>;
+        };
+
+        dtt7: dtt7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DTT7";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 7>;
 
             tapping-term-ms = <200>;
         };
@@ -101,7 +128,7 @@
   &kp DA_EXCLAMATION      &kp DA_DOUBLE_QUOTES          &kp DA_HASH                      &kp DA_DOLLAR           &lt 5 DA_PERCENT  &none  &none  &lt 5 DA_AMPERSAND  &kp DA_PIPE         &kp DA_LEFT_PARENTHESIS   &kp DA_RIGHT_PARENTHESIS     &kp DA_EQUAL
   &mt LEFT_META DA_GRAVE  &mt LEFT_ALT DA_LEFT_BRACKET  &mt LEFT_SHIFT DA_RIGHT_BRACKET  &mt LCTRL DA_BACKSLASH  &kp DA_SLASH      &none  &none  &kp DA_UNDERSCORE   &mt RCTRL DA_MINUS  &mt RSHIFT DA_LEFT_BRACE  &mt LEFT_ALT DA_RIGHT_BRACE  &mt RIGHT_META DA_ASTERISK
   &lt 8 DA_LESS_THAN      &kp DA_GREATER_THAN           &kp DA_AT_SIGN                   &kp DA_ACUTE            &kp DA_UMLAUT                   &kp DA_TILDE        &kp DA_PLUS         &kp DA_SEMICOLON          &kp DA_COLON                 &lt 8 DA_CARET
-                                                        &osl 6 6                         &mt TAB SPACE           &kp BSPC                        &esc_l              &to 1               &osl 6 6
+                                                        &osl 6 6                         &mt TAB SPACE           &kp BSPC                        &esc_l              &trans              &osl 6 6
             >;
 
             label = "Sym";
@@ -123,7 +150,7 @@
   &kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp POUND        &kp DLLR        &lt 5 PERCENT  &none  &none  &lt 5 AMPERSAND  &kp PIPE         &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS     &kp EQUAL
   &mt LMETA GRAVE  &mt LEFT_ALT LBKT  &mt LSHIFT RBKT  &mt LCTRL BSLH  &kp SLASH      &none  &none  &kp UNDERSCORE   &mt RCTRL MINUS  &mt RSHIFT LEFT_BRACE  &mt LEFT_ALT RIGHT_BRACE  &mt RMETA ASTERISK
   &lt 8 LESS_THAN  &kp GREATER_THAN   &kp AT           &none           &none                        &kp TILDE        &kp PLUS         &kp SEMICOLON          &kp COLON                 &lt 8 CARET
-                                      &osl 6 6         &mt TAB SPACE   &kp BACKSPACE                &to 2            &to 3            &osl 6 6
+                                      &osl 6 6         &mt TAB SPACE   &kp BACKSPACE                &to 2            &trans           &osl 6 6
             >;
 
             label = "US_Sym";
@@ -131,10 +158,10 @@
 
         Gaming {
             bindings = <
-  &kp TAB     &kp Q  &kp W     &kp E      &kp R          &none  &none  &kp T    &kp Y    &kp U     &kp I  &kp O
-  &kp LSHIFT  &kp A  &kp S     &kp D      &kp F          &none  &none  &lt 1 G  &kp H    &kp J     &kp K  &mt LEFT_META L
-  &kp LCTRL   &kp Z  &kp X     &kp C      &kp V                        &kp B    &kp N    &kp M     &kp P  &lt 8 DA_PERIOD
-                     &osl 9 9  &kp SPACE  &mt LALT BSPC                &esc_l   &kp RET  &osl 9 9
+  &kp TAB     &kp Q  &kp W     &kp E      &kp R      &none  &none  &kp Y    &kp U    &kp I      &kp O    &kp P
+  &kp LSHIFT  &kp A  &kp S     &kp D      &kp F      &none  &none  &lt 1 H  &kp J    &kp K      &kp L    &mt LEFT_META DA_SQT
+  &kp LCTRL   &kp Z  &kp X     &kp C      &kp V                    &kp N    &kp M    &kp COMMA  &kp DOT  &lt 8 DA_QMARK
+                     &kp LALT  &kp SPACE  &lt 9 ESC                &esc_l   &kp RET  &osl 9 9
             >;
 
             label = "Gaming";
@@ -156,7 +183,7 @@
   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &none  &none  &kp N6   &kp N7  &kp N8  &kp N9  &kp N0
   &trans  &trans  &trans  &trans  &kp F11  &none  &none  &kp F12  &trans  &trans  &trans  &trans
   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6   &kp F7  &kp F8  &kp F9  &kp F10
-                  &trans  &trans  &trans                 &esc_l   &dttn   &trans
+                  &trans  &trans  &trans                 &esc_l   &trans  &trans
             >;
 
             label = "Num";
@@ -164,10 +191,10 @@
 
         BT {
             bindings = <
-  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none  &none  &trans      &trans  &trans  &trans      &trans
-  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none  &none  &bt BT_PRV  &trans  &trans  &bt BT_NXT  &trans
-  &trans         &trans         &trans         &trans         &bt BT_CLR                   &trans      &trans  &trans  &trans      &trans
-                                &trans         &trans         &trans                       &esc_l      &to 7   &trans
+  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &none  &none  &trans  &trans  &trans  &trans  &trans
+  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &none  &none  &trans  &trans  &trans  &trans  &trans
+  &trans         &trans         &trans         &trans         &bt BT_CLR                   &trans  &trans  &trans  &trans  &trans
+                                &trans         &trans         &trans                       &esc_l  &trans  &trans
             >;
 
             label = "BT";
@@ -177,8 +204,8 @@
             bindings = <
   &trans  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &trans     &none  &none  &trans          &trans          &trans        &trans           &kp DELETE
   &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans     &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-  &trans  &trans          &trans          &trans           &mkp MCLK                &to 2           &to 4           &to 7         &trans           &trans
-                          &osl 6 6        &mkp LCLK        &mkp RCLK                &esc_l          &to 8           &osl 6 6
+  &trans  &trans          &trans          &trans           &mkp MCLK                &dtt2           &dtt4           &dtt7         &trans           &trans
+                          &osl 6 6        &mkp LCLK        &mkp RCLK                &esc_l          &trans          &osl 6 6
             >;
 
             label = "Nav";
@@ -187,10 +214,10 @@
         Gaming2 {
             label = "Gaming2";
             bindings = <
-  &kp N1      &kp N2  &kp W     &kp N3     &kp N4         &none  &none  &kp N5  &kp NUMBER_6  &kp N7    &kp N8  &kp N9
-  &kp LSHIFT  &kp A   &kp S     &kp D      &kp T          &none  &none  &kp G   &kp H         &kp J     &kp K   &kp L
-  &kp LCTRL   &kp Z   &kp X     &kp B      &kp G                        &kp B   &kp N         &kp M     &kp N0  &lt 8 DA_PERIOD
-                      &osl 6 6  &kp SPACE  &mt LALT BSPC                &esc_l  &kp RET       &osl 6 6
+  &kp N1      &kp N2         &kp W   &kp N4  &kp T   &none  &none  &kp N6  &kp DA_N7  &kp DA_N8  &kp DA_N9  &kp N0
+  &kp LSHIFT  &kp A          &kp S   &kp D   &kp G   &none  &none  &kp F1  &kp F2     &kp F3     &kp F4     &kp F5
+  &kp LCTRL   &kp BACKSPACE  &kp N3  &kp N5  &kp B                 &kp F6  &kp F7     &kp F8     &kp F9     &lt 8 F10
+                             &trans  &trans  &trans                &esc_l  &kp F11    &kp F12
             >;
         };
     };
